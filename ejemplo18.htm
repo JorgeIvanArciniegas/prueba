@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaje</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="ejemplo18.js" defer></script>
+    <style>
+        #labelDescuentos{
+            color: rgb(226, 201, 38);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        #labelTotal{
+            color: rgb(110, 42, 238);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        #mensaje{
+            color: green;           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border rounded-3 bg-body-secondary m-auto mt-4 col-12 col-md-3 p-3">
+        <h1 class="text-center text-danger border-bottom border-black col-12">Viaje</h1>
+        <label for="importe">Importe €:</label>
+        <input type="text" id="importe" class="text-end col-8" placeholder="Escribe un valor mayor a cero">
+        <!--<p id="mensaje" class="fw-bold ms-auto fs-6 bg-body-tertiary d-inline-block text-success">Escribe un valor mayor a cero</p>-->
+        <fieldset>
+            <legend>Descuentos</legend>
+            <input type="checkbox" id="jubilado" value="10">
+            <label for="jubilado" class="col-11">Jubilado: 10%</label>
+            <input type="checkbox" id="idaVuelta" value="10">
+            <label for="idaVuelta" class="col-11">Ida y vuelta: 5%</label>
+            <input type="checkbox" id="vip" value="7">
+            <label for="vip">VIP: 7%</label>
+        </fieldset>
+        <fieldset class="border border-2 bg-info-subtle p-4">
+            <legend class="text-danger">Detalle de Descuentos</legend>
+            <div class="d-flex">
+                <label for="" class="col-4 text-rigth fw-bold">Por Jubilado</label>
+                <input type="text" value="0" name="dJubilado" id="dJubilado" readonly class="col-6 text-end">
+            </div>
+            <div class="d-flex">
+                <label for="" class="col-4 fw-bold">Ida y Vuelta</label>
+                <input type="text" value="0" name="dIdaVuelta" id="dIdaVuelta" readonly class="col-6 text-end">
+            </div>
+            <div class="d-flex">
+                <label for="" class="col-4 fw-bold">VIP</label>
+                <input type="text" value="0" name="dVIP" id="dVIP" readonly class="col-6 text-end">
+            </div>
+        </fieldset>
+        <div class="d-flex gap-2 justify-content-center">
+            <input type="button" value="Calcular" id="calcular" class="col-5 btn btn-success mb-3 mt-3">
+            <input type="button" value="borrar" id="borrar" class="col-5 btn btn-danger mb-3 mt-3">
+        </div>
+        <label for="descuentos" id="labelDescuentos">Total descuentos:</label>
+        <input type="text" id="descuentos" readonly class="col-11 mb-3 bg-danger-subtle text-end">
+        <label for="total" id="labelTotal">Total a pagar:</label>
+        <input type="text" id="total" readonly class="col-11 bg-danger-subtle text-end">
+    </div>
+    <!--<p id="mensaje" class="mt-2 text-center text-danger"></p>-->
+</body>
+
+</html>
